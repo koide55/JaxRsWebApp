@@ -28,6 +28,8 @@ public class ProductResource {
     @Consumes({MediaType.APPLICATION_XML,MediaType.APPLICATION_JSON})
     @Produces({MediaType.APPLICATION_XML,MediaType.APPLICATION_JSON})
     public Product register(Product p) {
+        Double price = p.getPrice() * 1.08;
+        p.setPrice(price);
         productService.create(p);
         return p;
     }
