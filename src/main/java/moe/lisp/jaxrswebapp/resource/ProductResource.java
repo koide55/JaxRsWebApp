@@ -30,7 +30,7 @@ public class ProductResource {
     public Product register(Product p) {
         Double price = p.getPrice() * 1.08;
         p.setPrice(price);
-        productService.create(p);
+        //productService.create(p);
         return p;
     }
     
@@ -42,3 +42,4 @@ public class ProductResource {
         return productService.findByName(name);
     }
 }
+

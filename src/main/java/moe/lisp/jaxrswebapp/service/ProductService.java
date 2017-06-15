@@ -27,9 +27,14 @@ public class ProductService {
                .getSingleResult();
     }
     
-    public List<Product> findAll() {        
+    public List<Product> findAll() { 
+        /*
         return (List<Product>)em
                 .createNativeQuery(
                 "db.PRODUCT.find()", Product.class);
+        */
+        return (List<Product>)em
+                .createQuery("Select x from Product x")
+                .getResultList(); 
     }
 }
